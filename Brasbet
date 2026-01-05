@@ -1,166 +1,199 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brasbet | Cassino Online</title>
-  <meta name="description" content="Brasbet é uma plataforma moderna de cassino online, comprometida com jogo responsável, segurança e conformidade legal no Brasil." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0b0f1a;
-      --card: #12182b;
-      --primary: #00e0ff;
-      --accent: #6cff9d;
-      --text: #e6ebff;
-      --muted: #a6b0ff;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; font-family: 'Inter', sans-serif; background: radial-gradient(1200px 600px at 10% -10%, #16204a, transparent), var(--bg); color: var(--text);
-    }
-    header {
-      position: sticky; top: 0; z-index: 10; backdrop-filter: blur(10px);
-      background: rgba(11,15,26,.7); border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .container { max-width: 1200px; margin: auto; padding: 20px; }
-    .nav { display: flex; align-items: center; justify-content: space-between; }
-    .brand { font-weight: 800; letter-spacing: .5px; }
-    .brand span { color: var(--primary); }
-    .nav a { color: var(--text); text-decoration: none; margin-left: 16px; opacity: .9; }
-    .nav a:hover { opacity: 1; color: var(--primary); }
-    .hero { padding: 80px 0; }
-    .grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; }
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0));
-      border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 28px;
-      box-shadow: 0 20px 40px rgba(0,0,0,.35);
-    }
-    h1 { font-size: 44px; margin: 0 0 12px; }
-    h2 { font-size: 28px; margin: 0 0 12px; }
-    h3 { margin-top: 0; }
-    p { color: var(--muted); line-height: 1.6; }
-    .badge { display: inline-block; padding: 6px 10px; border-radius: 999px; background: rgba(0,224,255,.12); color: var(--primary); border: 1px solid rgba(0,224,255,.35); }
-    .cta { display: inline-flex; gap: 12px; margin-top: 18px; }
-    .btn {
-      padding: 12px 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,.12);
-      background: linear-gradient(180deg, #1a2456, #10174a); color: var(--text); cursor: pointer; text-decoration: none;
-    }
-    .btn.primary { background: linear-gradient(180deg, #00e0ff, #1aa6ff); color: #001018; border: none; }
-    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    section { padding: 56px 0; }
-    footer { border-top: 1px solid rgba(255,255,255,.06); background: rgba(11,15,26,.7); }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 24px; }
-    small { color: #9aa4ff; }
-    .age { font-weight: 800; color: #ff6c6c; }
-    @media (max-width: 900px) {
-      .grid { grid-template-columns: 1fr; }
-      .features, .footer-grid { grid-template-columns: 1fr; }
-      h1 { font-size: 34px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Brasbet Demo Cassino</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #1b1b1b, #000);
+  color: #fff;
+  text-align: center;
+}
+
+.box {
+  max-width: 420px;
+  margin: 40px auto;
+  background: #111;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 0 25px rgba(245,196,0,0.25);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #f5c400;
+  margin-bottom: 5px;
+}
+
+.sub {
+  font-size: 13px;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: none;
+  font-size: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, #f5c400, #d4a800);
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.saldo {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.resultado {
+  margin-top: 15px;
+  font-size: 17px;
+}
+
+.vip {
+  margin-top: 20px;
+  padding: 15px;
+  background: linear-gradient(135deg, #2a2200, #151100);
+  border-radius: 10px;
+  border: 1px solid #f5c400;
+}
+
+.aviso {
+  margin-top: 20px;
+  font-size: 11px;
+  color: #aaa;
+}
+
+.hidden {
+  display: none;
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">Bras<span>bet</span></div>
-      <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#licenca">Licença</a>
-        <a href="#responsavel">Jogo Responsável</a>
-        <a href="#termos">Termos</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container grid">
-        <div class="card">
-          <span class="badge">Cassino Online</span>
-          <h1>Brasbet — entretenimento com responsabilidade</h1>
-          <p>Plataforma moderna de cassino online, focada em segurança, transparência e conformidade com a regulamentação brasileira.</p>
-          <div class="cta">
-            <a class="btn primary" href="#licenca">Conformidade Legal</a>
-            <a class="btn" href="#responsavel">Jogo Responsável</a>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Destaques</h3>
-          <div class="features">
-            <div class="card"><strong>Segurança</strong><p>Criptografia e proteção de dados.</p></div>
-            <div class="card"><strong>Transparência</strong><p>Políticas claras e auditáveis.</p></div>
-            <div class="card"><strong>Compliance</strong><p>Aderência às normas vigentes.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- LOGIN -->
+<div class="box" id="loginBox">
+  <div class="logo">BRASBET DEMO</div>
+  <div class="sub">Cassino demonstrativo premium</div>
 
-    <section id="sobre">
-      <div class="container">
-        <div class="card">
-          <h2>Sobre a Brasbet</h2>
-          <p>A Brasbet é uma iniciativa de cassino online criada para oferecer entretenimento digital com foco em integridade, proteção ao usuário e adequação regulatória. Operamos com princípios de jogo responsável e combate a práticas ilícitas.</p>
-        </div>
-      </div>
-    </section>
+  <input type="text" id="user" placeholder="Usuário">
+  <input type="password" placeholder="Senha">
 
-    <section id="licenca">
-      <div class="container">
-        <div class="card">
-          <h2>Licenciamento e Regulamentação</h2>
-          <p>A Brasbet encontra-se em processo de adequação às exigências legais brasileiras, incluindo políticas de KYC, prevenção à lavagem de dinheiro (PLD/FT), proteção ao consumidor e idade mínima.</p>
-          <p><strong>Status:</strong> Site institucional para apresentação regulatória.</p>
-        </div>
-      </div>
-    </section>
+  <button onclick="login()">Entrar</button>
 
-    <section id="responsavel">
-      <div class="container">
-        <div class="card">
-          <h2>Jogo Responsável</h2>
-          <p>Promovemos práticas responsáveis, oferecendo informações, limites e orientação para um uso consciente. O acesso é restrito a maiores de 18 anos.</p>
-          <p class="age">18+ Jogue com responsabilidade.</p>
-        </div>
-      </div>
-    </section>
+  <div class="aviso">
+    Ambiente demonstrativo. Nenhum dado real é utilizado.
+  </div>
+</div>
 
-    <section id="termos">
-      <div class="container">
-        <div class="card">
-          <h2>Termos de Uso & Privacidade</h2>
-          <p>Os termos definem direitos, deveres e políticas de privacidade, incluindo tratamento de dados conforme a LGPD. Documentos completos serão disponibilizados conforme a fase operacional.</p>
-        </div>
-      </div>
-    </section>
+<!-- CASSINO -->
+<div class="box hidden" id="cassinoBox">
+  <div class="logo">🎰 Brasbet Cassino</div>
+  <div class="sub">Experiência premium • Dinheiro fictício</div>
 
-    <section id="contato">
-      <div class="container">
-        <div class="card">
-          <h2>Contato</h2>
-          <p>Para informações institucionais e regulatórias:</p>
-          <p><strong>Email:</strong> contato@brasbet.com.br</p>
-        </div>
-      </div>
-    </section>
-  </main>
+  <div class="saldo">
+    Saldo Demo: <strong>R$ <span id="saldo">0</span></strong>
+  </div>
 
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <strong>Brasbet</strong>
-        <p><small>Site institucional de cassino online. Não oferece apostas ativas nesta fase.</small></p>
-      </div>
-      <div>
-        <small>Conformidade</small>
-        <p><small>KYC • PLD/FT • LGPD</small></p>
-      </div>
-      <div>
-        <small>Idade</small>
-        <p class="age">Proibido para menores de 18 anos</p>
-      </div>
-    </div>
-  </footer>
+  <input type="number" id="aposta" placeholder="Valor da aposta demo">
+
+  <button onclick="apostar()">Apostar</button>
+
+  <div class="resultado" id="resultado"></div>
+
+  <!-- ÁREA VIP -->
+  <div class="vip">
+    <strong>👑 Área VIP Demo</strong><br><br>
+    ✔ Bônus fictício exclusivo<br>
+    ✔ Experiência cassino premium<br>
+    ✔ Saldo demonstrativo avançado<br><br>
+    <button onclick="bonusVip()">Resgatar Bônus VIP</button>
+  </div>
+
+  <div class="aviso">
+    ⚠ Plataforma exclusivamente demonstrativa.<br>
+    Não oferece apostas reais, prêmios ou dinheiro.
+  </div>
+</div>
+
+<script>
+let saldoInicial = 1000;
+let saldo = 0;
+
+function hoje() {
+  return new Date().toLocaleDateString();
+}
+
+function login() {
+  let ultimoAcesso = localStorage.getItem("dataDemo");
+
+  if (ultimoAcesso !== hoje()) {
+    saldo = saldoInicial;
+    localStorage.setItem("saldoDemo", saldo);
+    localStorage.setItem("dataDemo", hoje());
+  } else {
+    saldo = Number(localStorage.getItem("saldoDemo")) || saldoInicial;
+  }
+
+  document.getElementById("saldo").innerText = saldo;
+  document.getElementById("loginBox").classList.add("hidden");
+  document.getElementById("cassinoBox").classList.remove("hidden");
+}
+
+function apostar() {
+  let valor = Number(document.getElementById("aposta").value);
+  let res = document.getElementById("resultado");
+
+  if (valor <= 0 || valor > saldo) {
+    res.innerHTML = "❌ Aposta inválida.";
+    res.style.color = "red";
+    return;
+  }
+
+  let ganhou = Math.random() < 0.45;
+
+  if (ganhou) {
+    saldo += valor;
+    res.innerHTML = "✅ Vitória! Você ganhou R$ " + valor;
+    res.style.color = "#00ff88";
+  } else {
+    saldo -= valor;
+    res.innerHTML = "❌ Derrota! Você perdeu R$ " + valor;
+    res.style.color = "#ff4444";
+  }
+
+  document.getElementById("saldo").innerText = saldo;
+  localStorage.setItem("saldoDemo", saldo);
+}
+
+function bonusVip() {
+  saldo += 500;
+  document.getElementById("saldo").innerText = saldo;
+  localStorage.setItem("saldoDemo", saldo);
+  alert("🎉 Bônus VIP Demo de R$ 500 creditado!");
+}
+</script>
+
 </body>
 </html>
